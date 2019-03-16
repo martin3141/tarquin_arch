@@ -31,6 +31,7 @@ build() {
 }
 
 package() {
+  mkdir -p $pkgdir/usr/bin
   cp $srcdir/$pkgname-$pkgver/src/build/redist/tarquin $pkgdir/usr/bin
   cp $srcdir/$pkgname-$pkgver/src/build/redist/tarquingui $pkgdir/usr/bin
 }
