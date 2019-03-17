@@ -6,10 +6,10 @@ pkgrel=1
 pkgdesc="An analysis tool for automatically determining the quantities of molecules present in MR spectroscopy data"
 arch=("x86_64")
 url="http://tarquin.sourceforge.net/"
-license=('GPL')
+license=("GPL")
 depends=("lapack" "protobuf" "fftw" "gnuplot" "qwt5")
 makedepends=("cmake" "gcc-fortran" "boost")
-source=(https://github.com/martin3141/tarquin/archive/v$pkgver.tar.gz)
+source=("https://github.com/martin3141/tarquin/archive/v$pkgver.tar.gz")
 md5sums=("9886ccd6eaaa35b7b60a26fd56cafecd")
 
 prepare() {
