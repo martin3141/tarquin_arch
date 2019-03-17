@@ -14,24 +14,24 @@ md5sums=("9886ccd6eaaa35b7b60a26fd56cafecd")
 
 prepare() {
   # patch master CMakeLists.txt
-  cd $srcdir/$pkgname-$pkgver/src
+  cd "$srcdir"/$pkgname-$pkgver/src
   patch -Np0 -i ../../../CMakeListsPatch.txt
   # update protobuf files
-  cd $srcdir/$pkgname-$pkgver/src/common
+  cd "$srcdir"/$pkgname-$pkgver/src/common
   ./gen_proto.sh
   # make the build directory
-  cd $srcdir/$pkgname-$pkgver/src
+  cd "$srcdir"/$pkgname-$pkgver/src
   mkdir -p build
 }
 
 build() {
-  cd $srcdir/$pkgname-$pkgver/src/build
+  cd "$srcdir"/$pkgname-$pkgver/src/build
   cmake -DCMAKE_BUILD_TYPE=Release ../ 
   make
 }
 
 package() {
-  mkdir -p $pkgdir/usr/bin
-  cp $srcdir/$pkgname-$pkgver/src/build/redist/tarquin $pkgdir/usr/bin
-  cp $srcdir/$pkgname-$pkgver/src/build/redist/tarquingui $pkgdir/usr/bin
+  mkdir -p "$pkgdir"/usr/bin
+  cp "$srcdir"/$pkgname-$pkgver/src/build/redist/tarquin "$pkgdir"/usr/bin
+  cp "$srcdir"/$pkgname-$pkgver/src/build/redist/tarquingui "$pkgdir"/usr/bin
 }
