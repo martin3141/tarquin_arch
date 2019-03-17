@@ -7,8 +7,8 @@ pkgdesc="An analysis tool for automatically determining the quantities of molecu
 arch=("x86_64")
 url="http://tarquin.sourceforge.net/"
 license=('GPL')
-depends=("gcc-fortran" "lapack" "protobuf" "qt4" "boost" "fftw" "protobuf" "gnuplot" "qwt5")
-makedepends=("cmake")
+depends=("lapack" "protobuf" "fftw" "gnuplot" "qwt5")
+makedepends=("cmake" "gcc-fortran" "boost")
 source=(https://github.com/martin3141/tarquin/archive/v$pkgver.tar.gz)
 md5sums=("9886ccd6eaaa35b7b60a26fd56cafecd")
 
